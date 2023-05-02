@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Hash;
 
 class ApiUsersController extends Controller
 {
-    public function login()
+    public function regis()
     {
         return User::create([
             'name'=>request("name"),
             'email'=>request("email"),
-            'password'=>Hash::make(("password")),
-            'api_token'=>request(Str::random(40))
+            'password'=>Hash::make(request("password")),
+            'api_token'=>request(Str::random(40)),
         ]);
     }
 }

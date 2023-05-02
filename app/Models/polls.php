@@ -9,4 +9,9 @@ class polls extends Model
 {
     use HasFactory;
     protected $fillable= ["title","deskripsi","deadline","created_by"];
+
+    public function votes()
+    {
+        return $this->hasMany(votes::class);
+    }
 }
